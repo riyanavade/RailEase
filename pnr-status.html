@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PNR Enquiry - RailEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="pnr-status-page">
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      🚆 Rail<span>Ease</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr-status.html">PNR Status</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+      <li><a href="login.html" class="btn-nav">Login / Register</a></li>
+    </ul>
+  </header>
+
+  <main class="container" style="max-width: 800px;">
+    <h1 class="section-title text-center" style="text-align: center;">Live PNR Enquiry</h1>
+    <p class="section-subtitle text-center" style="text-align: center;">Enter your 10-digit Passenger Name Record (PNR) to check current booking status.</p>
+
+    <div class="card">
+      <form id="pnr-search-form">
+        <div class="form-group">
+          <label for="pnr-input">10-Digit PNR Number</label>
+          <div style="display: flex; gap: 1rem;">
+            <input type="text" id="pnr-input" class="form-control" placeholder="Enter 10-digit PNR (e.g. 1234567890)" maxlength="10" required />
+            <button type="submit" class="btn btn-primary" style="white-space: nowrap;">Check Status</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- PNR Result Display Card -->
+    <div id="pnr-result-card" style="display: none; margin-top: 1.5rem;">
+      <!-- Dynamically filled by js/main.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 RailEase System. Built with pure HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Available Trains - RailEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="search-results-page">
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      🚆 Rail<span>Ease</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr-status.html">PNR Status</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+      <li><a href="login.html" class="btn-nav">Login / Register</a></li>
+    </ul>
+  </header>
+
+  <main class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <div>
+        <h1 id="route-heading" class="section-title">Train Search Results</h1>
+        <p class="section-subtitle">Select your preferred train, travel class, and fare to continue booking.</p>
+      </div>
+      <a href="index.html" class="btn btn-secondary">← Change Search</a>
+    </div>
+
+    <div class="results-container">
+      <!-- Sidebar Filters -->
+      <aside class="card sidebar-filter">
+        <h3>Filter Trains</h3>
+        <hr style="margin: 0.8rem 0; border: none; border-top: 1px solid var(--border-color);" />
+        
+        <div class="filter-group">
+          <h4>Train Type</h4>
+          <label class="filter-option"><input type="checkbox" checked /> Rajdhani / Shatabdi</label>
+          <label class="filter-option"><input type="checkbox" checked /> Vande Bharat</label>
+          <label class="filter-option"><input type="checkbox" checked /> Superfast Express</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Journey Class</h4>
+          <label class="filter-option"><input type="checkbox" checked /> AC First Class (1A)</label>
+          <label class="filter-option"><input type="checkbox" checked /> AC 2 Tier (2A)</label>
+          <label class="filter-option"><input type="checkbox" checked /> AC 3 Tier (3A)</label>
+          <label class="filter-option"><input type="checkbox" checked /> Sleeper Class (SL)</label>
+        </div>
+      </aside>
+
+      <!-- Main Train Results Listing -->
+      <section id="train-list-container">
+        <!-- Train cards populated dynamically by js/main.js -->
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 RailEase System. Built with pure HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

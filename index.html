@@ -1,13 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>railway_reservation</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RailEase - Indian Railway Reservation System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      🚆 Rail<span>Ease</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr-status.html">PNR Status</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+      <li><a href="login.html" class="btn-nav">Login / Register</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- Hero Banner Section -->
+    <section class="hero">
+      <h1>Book Indian Railway Tickets Instantly</h1>
+      <p>Seamless train reservation, real-time availability check, live PNR status, and instant confirmation.</p>
+    </section>
+
+    <!-- Search Form Component -->
+    <div class="container search-box-card">
+      <div class="card">
+        <h2 style="margin-bottom: 1.2rem; font-size: 1.4rem; color: var(--primary-color);">🔍 Search Trains</h2>
+        <form id="search-form">
+          <div class="search-grid">
+            <div class="form-group">
+              <label for="from-station">From Station</label>
+              <select id="from-station" class="form-control" required></select>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 1.25rem;">
+              <button type="button" id="swap-btn" class="btn btn-secondary" style="border-radius: 50%; width: 42px; height: 42px; padding: 0;">⇅</button>
+            </div>
+
+            <div class="form-group">
+              <label for="to-station">To Station</label>
+              <select id="to-station" class="form-control" required></select>
+            </div>
+
+            <div class="form-group">
+              <label for="journey-date">Date of Journey</label>
+              <input type="date" id="journey-date" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="travel-class">Travel Class</label>
+              <select id="travel-class" class="form-control">
+                <option value="ALL">All Classes</option>
+                <option value="1A">AC First Class (1A)</option>
+                <option value="2A">AC 2 Tier (2A)</option>
+                <option value="3A">AC 3 Tier (3A)</option>
+                <option value="SL">Sleeper (SL)</option>
+                <option value="CC">AC Chair Car (CC)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem; text-align: center;">
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 0.9rem; font-size: 1.1rem;">
+              Find Available Trains →
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Quick Features Section -->
+    <section class="container" style="margin-top: 2rem;">
+      <h2 class="section-title text-center" style="text-align: center; margin-bottom: 2rem;">Why Reserve with RailEase?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+          <h3>Instant Ticket Booking</h3>
+          <p class="text-muted" style="margin-top: 0.5rem;">Book tickets in less than 2 minutes with real-time seat availability updates.</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+          <h3>Live PNR Enquiry</h3>
+          <p class="text-muted" style="margin-top: 0.5rem;">Check current reservation status, berth allocation, and seat details instantly.</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔒</div>
+          <h3>Secure Payment Gateways</h3>
+          <p class="text-muted" style="margin-top: 0.5rem;">Multiple secure options including UPI QR code, Credit/Debit card, and Net Banking.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>RailEase</h3>
+        <p>Your simple and reliable Indian Railway reservation portal.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Search Trains</a></li>
+          <li><a href="pnr-status.html">Check PNR Status</a></li>
+          <li><a href="my-bookings.html">My Bookings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Help & Support</h3>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Refund Rules</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 RailEase System. Built with pure HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket Confirmation - RailEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="confirmation-page">
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      🚆 Rail<span>Ease</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr-status.html">PNR Status</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+    </ul>
+  </header>
+
+  <main class="container">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <div style="font-size: 3rem; color: var(--success-color);">✅</div>
+      <h1 class="section-title">Booking Confirmed!</h1>
+      <p class="section-subtitle">Your railway reservation ticket has been successfully booked.</p>
+    </div>
+
+    <!-- E-Ticket Display Container -->
+    <div class="ticket-container">
+      <div class="ticket-header">
+        <div>
+          <div style="font-size: 0.85rem; opacity: 0.9; text-transform: uppercase;">Indian Railways E-Ticket</div>
+          <div style="font-size: 1.2rem; font-weight: 700;">RailEase Reservation Pass</div>
+        </div>
+        <div>
+          <div style="font-size: 0.8rem; text-align: right; opacity: 0.9;">PNR NUMBER</div>
+          <div id="ticket-pnr" class="pnr-number">1234567890</div>
+        </div>
+      </div>
+
+      <div class="ticket-body">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <p><strong>Train:</strong> <span id="ticket-train">Rajdhani Express</span></p>
+            <p><strong>Journey Date:</strong> <span id="ticket-date">Tomorrow</span></p>
+          </div>
+          <div style="text-align: right;">
+            <p><strong>Route:</strong> <span id="ticket-route">MMCT → NDLS</span></p>
+            <p><strong>Class:</strong> <span id="ticket-class" style="color:var(--primary-color); font-weight:700;">3A</span></p>
+          </div>
+        </div>
+
+        <h4>Passenger Manifest & Status</h4>
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Passenger Name</th>
+              <th>Age / Gender</th>
+              <th>Booking Status</th>
+              <th>Coach & Seat No</th>
+            </tr>
+          </thead>
+          <tbody id="passengers-tbody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+
+        <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+          <a href="my-bookings.html" class="btn btn-secondary">View All My Bookings</a>
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Print / Download Ticket</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 RailEase System. Built with pure HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

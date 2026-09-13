@@ -1,0 +1,582 @@
+/* ==========================================================================
+   RailEase - Railway Reservation System Style Sheet
+   Language: CSS3 (Vanilla CSS)
+   Description: Clean, modern, responsive styling with custom CSS variables
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Variables & Theme Setup
+   -------------------------------------------------------------------------- */
+:root {
+  --primary-color: #1e40af;       /* Deep Railway Blue */
+  --primary-hover: #1d4ed8;       /* Hover state blue */
+  --secondary-color: #0f766e;     /* Teal accents */
+  --accent-color: #eab308;        /* Golden Amber */
+  --bg-color: #f8fafc;            /* Light gray background */
+  --card-bg: #ffffff;             /* Pure white container background */
+  --text-dark: #0f172a;           /* Dark headings & body text */
+  --text-muted: #64748b;          /* Muted subtitle text */
+  --border-color: #e2e8f0;        /* Subtle border color */
+  --success-color: #16a34a;       /* Confirmed / success green */
+  --warning-color: #d97706;       /* Waiting list warning orange */
+  --danger-color: #dc2626;        /* Cancelled / alert red */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition: all 0.25s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Base Elements
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   3. Header & Navigation Bar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #e2e8f0;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.btn-nav {
+  background-color: var(--accent-color);
+  color: var(--text-dark) !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-sm);
+}
+
+.btn-nav:hover {
+  background-color: #facc15 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Layout Containers & Utility Classes
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons & Form Controls
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero Banner & Search Form Component
+   -------------------------------------------------------------------------- */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  color: #ffffff;
+  padding: 4rem 1rem 5rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box-card {
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+/* --------------------------------------------------------------------------
+   7. Train Card & Search Results Layout
+   -------------------------------------------------------------------------- */
+.results-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+}
+
+.sidebar-filter {
+  height: fit-content;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.filter-group h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.train-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+}
+
+.train-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.train-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.train-number {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-rajdhani { background-color: #fef3c7; color: #b45309; }
+.badge-vande { background-color: #dbeafe; color: #1e40af; }
+.badge-express { background-color: #f3e8ff; color: #6b21a8; }
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.station-box {
+  text-align: center;
+}
+
+.station-time {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.station-code {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.station-name-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.duration-box {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.duration-line {
+  height: 2px;
+  width: 120px;
+  background-color: var(--border-color);
+  margin: 4px auto;
+  position: relative;
+}
+
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.8rem;
+}
+
+.class-card-btn {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f8fafc;
+  transition: var(--transition);
+}
+
+.class-card-btn:hover,
+.class-card-btn.selected {
+  border-color: var(--primary-color);
+  background-color: #eff6ff;
+}
+
+.class-code {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.class-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+.class-price {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Ticket & Booking Details Component
+   -------------------------------------------------------------------------- */
+.ticket-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 2px solid var(--primary-color);
+}
+
+.ticket-header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pnr-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+}
+
+.ticket-body {
+  padding: 2rem;
+}
+
+.status-badge-success {
+  background-color: #dcfce7;
+  color: #15803d;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.table-custom th,
+.table-custom td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-custom th {
+  background-color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   9. Footer Component
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 2rem 1.5rem 2rem;
+  margin-top: 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #94a3b8;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #1e293b;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .results-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .schedule-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .duration-line {
+    width: 2px;
+    height: 40px;
+  }
+}

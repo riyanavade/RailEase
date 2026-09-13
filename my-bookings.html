@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookings - RailEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="my-bookings-page">
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      🚆 Rail<span>Ease</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr-status.html">PNR Status</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+      <li><a href="login.html" class="btn-nav">Login / Register</a></li>
+    </ul>
+  </header>
+
+  <main class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <div>
+        <h1 class="section-title">My Booked Tickets</h1>
+        <p class="section-subtitle">Manage your active reservations, view e-tickets, or cancel tickets.</p>
+      </div>
+      <a href="index.html" class="btn btn-primary">+ Book New Ticket</a>
+    </div>
+
+    <!-- Container for Bookings List -->
+    <div id="my-bookings-container">
+      <!-- Dynamically filled by js/main.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 RailEase System. Built with pure HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

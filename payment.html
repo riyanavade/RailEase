@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Portal - RailEase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="payment-page">
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      🚆 Rail<span>Ease</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pnr-status.html">PNR Status</a></li>
+      <li><a href="my-bookings.html">My Bookings</a></li>
+    </ul>
+  </header>
+
+  <main class="container" style="max-width: 900px;">
+    <h1 class="section-title text-center" style="text-align: center;">Secure Payment Portal</h1>
+    <p class="section-subtitle text-center" style="text-align: center;">Choose your payment method to generate your 10-digit PNR ticket.</p>
+
+    <div class="card">
+      <form id="payment-form">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+          <h3 style="color: var(--primary-color);">Total Fare Payable</h3>
+          <h2 id="pay-total-display" style="color: var(--success-color);">₹0</h2>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="margin-bottom: 0.8rem;">Select Payment Option:</h4>
+          
+          <div class="form-group" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 0.8rem;">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
+              <input type="radio" name="pay-method" value="upi" checked />
+              <strong>UPI / QR Code</strong> (Google Pay, PhonePe, Paytm, BHIM)
+            </label>
+            <div style="margin-top: 0.8rem; padding-left: 1.8rem;">
+              <input type="text" class="form-control" placeholder="Enter VPA / UPI ID (e.g. user@upi)" />
+            </div>
+          </div>
+
+          <div class="form-group" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 0.8rem;">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
+              <input type="radio" name="pay-method" value="card" />
+              <strong>Credit / Debit Card</strong> (Visa, MasterCard, RuPay)
+            </label>
+          </div>
+
+          <div class="form-group" style="border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-sm);">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
+              <input type="radio" name="pay-method" value="netbanking" />
+              <strong>Net Banking</strong> (HDFC, SBI, ICICI, Axis Bank)
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" id="pay-submit-btn" class="btn btn-success btn-block" style="padding: 1rem; font-size: 1.15rem;">
+          <span id="pay-btn-amount">Pay & Generate Ticket</span> →
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>&copy; 2026 RailEase System. Built with pure HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
